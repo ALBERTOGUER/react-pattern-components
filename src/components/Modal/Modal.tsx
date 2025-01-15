@@ -14,6 +14,8 @@ export interface ModalProps extends FC {
     children: React.ReactNode;
 
     classProp?: string;
+
+    tittle: string;
     /** Optional click handler */
     onClick?: () => void;
 }
@@ -21,12 +23,10 @@ export interface ModalProps extends FC {
 /** Primary UI component for user interaction */
 export const Modal = ({
     isHidden,
-    size = 'medium',
     backgroundColor,
-    label,
     children,
     classProp,
-    ...props
+    tittle,
 }: ModalProps) => {
     return (
         <>
@@ -35,8 +35,18 @@ export const Modal = ({
                     <div className="relative p-4 w-full max-w-2xl max-h-full">
                         <div style={{ backgroundColor }} className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                                {children}
+                                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                                    {tittle}
+                                </h3>
+                                <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+
+                                    <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span className="sr-only">Close modal</span>
+                                </button>
                             </div>
+                            {children}
                         </div>
                     </div>
                 </div>,

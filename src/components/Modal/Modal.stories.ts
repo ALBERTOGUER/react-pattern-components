@@ -28,7 +28,8 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     isHidden: true,
-    children: "hola"
+    children: "hola",
+    tittle: "Terms of service"
   },
 };
 

@@ -32,7 +32,7 @@ const DialogContext = React.createContext<{
   setStackedDialogOpen: (open: boolean) => void;
 }>({
   stackedDialogOpen: false,
-  setStackedDialogOpen: () => {},
+  setStackedDialogOpen: () => { },
 });
 
 export const DialogProvider: React.FC<{
@@ -72,7 +72,7 @@ const Dialog: React.FC<DialogProps> = forwardRef<HTMLDivElement, DialogProps>(
     const dialogRef = useRef<HTMLDivElement>(null);
     const [isVisible, setIsVisible] = useState(isOpen);
     const [isAnimating, setIsAnimating] = useState(false);
-    const { stackedDialogOpen, setStackedDialogOpen } = useContext(DialogContext);
+    const { setStackedDialogOpen } = useContext(DialogContext);
 
     useEffect(() => {
       if (stack) {

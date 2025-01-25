@@ -21,15 +21,15 @@ interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   errorMessage?: ReactNode;
   description?: ReactNode;
   radius?:
-    | "none"
-    | "top"
-    | "right"
-    | "bottom"
-    | "left"
-    | "top-left"
-    | "top-right"
-    | "bottom-right"
-    | "bottom-left";
+  | "none"
+  | "top"
+  | "right"
+  | "bottom"
+  | "left"
+  | "top-left"
+  | "top-right"
+  | "bottom-right"
+  | "bottom-left";
   className?: string;
   hasPrefix?: ReactNode;
   hasSuffix?: ReactNode;
@@ -66,7 +66,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     const [isFocused, setIsFocused] = useState(false);
     const [isFilled, setIsFilled] = useState(!!props.value);
     const [validationError, setValidationError] = useState<ReactNode | null>(null);
-    const [height, setHeight] = useState<number | undefined>(undefined);
+    const [height, __] = useState<number | undefined>(undefined);
     const textareaRef = React.useRef<HTMLTextAreaElement>(null);
     const debouncedValue = useDebounce(props.value, 1000);
 

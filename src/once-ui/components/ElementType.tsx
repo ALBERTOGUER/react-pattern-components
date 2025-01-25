@@ -32,6 +32,7 @@ const ElementType = forwardRef<HTMLElement, ElementTypeProps>(
       }
       return (
         <Link
+          to={href}
           href={href}
           ref={ref as React.Ref<HTMLAnchorElement>}
           className={className}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, {
+import {
   useState,
   KeyboardEventHandler,
   ChangeEventHandler,
@@ -43,7 +43,7 @@ const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
       setIsFocused(true);
     };
 
-    const handleBlur: FocusEventHandler<HTMLInputElement> = (e) => {
+    const handleBlur: FocusEventHandler<HTMLInputElement> = () => {
       setIsFocused(false);
     };
 

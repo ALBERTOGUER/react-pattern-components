@@ -90,7 +90,7 @@ const Logo: React.FC<LogoProps> = ({
     <Link
       className={classNames("radius-l", "display-flex", "fit-height", className)}
       style={style}
-      href={href}
+      to={href}
       aria-label="Trademark"
       {...props}
     >

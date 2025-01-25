@@ -24,6 +24,7 @@ const style = {
   border: "playful", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
+  scaling: ""
 };
 
 const effects = {

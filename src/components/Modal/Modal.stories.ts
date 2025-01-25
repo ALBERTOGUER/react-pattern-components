@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Success: Story = {
   args: {
-    isOpen: true,
+    isOpen: false,
     type: "success",
     onClose: () => console.log("modal closed"),
     children: "hola",
